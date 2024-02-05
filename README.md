@@ -18,6 +18,8 @@ This is my personal Nvim setup. Very basic, opinionated, nothing special. Roughl
 
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - godfather of LSP.
 - [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim) - super easy setup of LSPs.
+- [MunifTanjim/prettier.nvim](https://github.com/MunifTanjim/prettier.nvim) - the only working prettier plugin I could find atm.
+- [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) - obsolete LSP plugin, but it seems to be required to configure above `prettier` plugin.
 
 #### Misc Editor:
 
