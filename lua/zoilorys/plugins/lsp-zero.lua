@@ -37,14 +37,21 @@ return {
     -- to learn how to use mason.nvim with lsp-zero
     -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
     require('mason').setup({})
+
+    local lspconfig = require "lspconfig"
     require('mason-lspconfig').setup({
       ensure_installed = { 'tsserver', 'rust_analyzer', 'gopls', 'templ' },
       handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
           local lua_opts = lsp_zero.nvim_lua_ls()
-          require('lspconfig').lua_ls.setup(lua_opts)
+          lspconfig.lua_ls.setup(lua_opts)
         end,
+        emmet_language_server = function ()
+          lspconfig.emmet_language_server.setup {
+            filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact", "templ" },
+          }
+        end
       }
     })
 
