@@ -18,8 +18,7 @@ This is my personal Nvim setup. Very basic, opinionated, nothing special. Roughl
 
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - godfather of LSP.
 - [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim) - super easy setup of LSPs.
-- [MunifTanjim/prettier.nvim](https://github.com/MunifTanjim/prettier.nvim) - the only working prettier plugin I could find atm.
-- [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) - obsolete LSP plugin, but it seems to be required to configure above `prettier` plugin.
+- [prettier/vim-prettier](https://github.com/prettier/vim-prettier) - official prettier plugin
 
 #### Misc Editor:
 
@@ -120,15 +119,15 @@ vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>
 -- LSP bindings - ‘b’ stands for buffer, as in current file
 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
 vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-vim.keymap.set("n", "<leader>bdn", function() vim.diagnostic.goto_next() end, opts)
 vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-vim.keymap.set("n", "<leader>bdp", function() vim.diagnostic.goto_prev() end, opts)
+
 vim.keymap.set("n", "<leader>bdv", function() vim.diagnostic.open_float() end, opts)
 vim.keymap.set("n", "<leader>bws", function() vim.lsp.buf.workspace_symbol() end, opts)
-vim.keymap.set("n", "<leader>bgd", function() vim.lsp.buf.definition() end, opts)
-vim.keymap.set("n", "<leader>bca", function() vim.lsp.buf.code_action() end, opts)
-vim.keymap.set("n", "<leader>bgr", function() vim.lsp.buf.references() end, opts)
-vim.keymap.set("n", "<leader>brn", function() vim.lsp.buf.rename() end, opts)
+
+vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)
+vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)
 -- control + h - ‘h’ stands for help
 vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
@@ -151,6 +150,8 @@ vim.keymap.set("n", "<leader>h1", function() ui.nav_file(1) end)
 vim.keymap.set("n", "<leader>h2", function() ui.nav_file(2) end)
 vim.keymap.set("n", "<leader>h3", function() ui.nav_file(3) end)
 vim.keymap.set("n", "<leader>h4", function() ui.nav_file(4) end)
+vim.keymap.set("n", "<leader>h5", function() ui.nav_file(5) end)
+vim.keymap.set("n", "<leader>h6", function() ui.nav_file(6) end)
 
 -- Gitsigns , control + g , ‘g’ stands for git
 map('n', ']c', function()
