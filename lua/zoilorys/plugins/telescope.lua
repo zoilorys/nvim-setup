@@ -22,6 +22,9 @@ return {
     vim.keymap.set('n', '<leader>pg', function()
       builtin.git_files { path_display = { truncate = 3 } }
     end)
+    vim.keymap.set('n', '<leader>pa', function()
+      builtin.find_files { path_display = { truncate = 3 } }
+    end)
     vim.keymap.set('n', '<leader>ps', function()
       builtin.grep_string({ search = vim.fn.input("Grep > "), path_display = { truncate = 3 } })
     end, {})
