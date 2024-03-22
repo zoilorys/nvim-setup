@@ -1,5 +1,5 @@
 -- Open file explorer in current file's dir
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>fv", vim.cmd.Ex)
 
 -- Window ops
 vim.keymap.set("n", "<leader>wv", vim.cmd.vsplit)
